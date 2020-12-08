@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pmccu\\OneDrive\\Documents\\CommandAPI\\src\\CommandAPI\\CommandAPI.csproj": {}
+    "C:\\Users\\pmccu\\OneDrive\\Documents\\CommandAPi\\src\\CommandAPI\\CommandAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pmccu\\OneDrive\\Documents\\CommandAPI\\src\\CommandAPI\\CommandAPI.csproj": {
+    "C:\\Users\\pmccu\\OneDrive\\Documents\\CommandAPi\\src\\CommandAPI\\CommandAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pmccu\\OneDrive\\Documents\\CommandAPI\\src\\CommandAPI\\CommandAPI.csproj",
+        "projectUniqueName": "C:\\Users\\pmccu\\OneDrive\\Documents\\CommandAPi\\src\\CommandAPI\\CommandAPI.csproj",
         "projectName": "CommandAPI",
-        "projectPath": "C:\\Users\\pmccu\\OneDrive\\Documents\\CommandAPI\\src\\CommandAPI\\CommandAPI.csproj",
+        "projectPath": "C:\\Users\\pmccu\\OneDrive\\Documents\\CommandAPi\\src\\CommandAPI\\CommandAPI.csproj",
         "packagesPath": "C:\\Users\\pmccu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pmccu\\OneDrive\\Documents\\CommandAPI\\src\\CommandAPI\\obj\\",
+        "outputPath": "C:\\Users\\pmccu\\OneDrive\\Documents\\CommandAPi\\src\\CommandAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pmccu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,22 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
