@@ -33,7 +33,7 @@ namespace CommandAPI.Migrations
                     b.Property<string>("Platform")
                         .HasColumnType("text");
 
-                    b.Property<string>("howTo")
+                    b.Property<string>("HowTo")
                         .HasColumnType("text");
 
                     b.HasKey("Id");
