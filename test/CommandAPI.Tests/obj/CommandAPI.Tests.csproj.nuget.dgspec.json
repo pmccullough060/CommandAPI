@@ -4,14 +4,14 @@
     "C:\\Users\\pmccu\\OneDrive\\Documents\\CommandAPi\\test\\CommandAPI.Tests\\CommandAPI.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pmccu\\OneDrive\\Documents\\CommandAPi\\test\\CommandAPI.Tests\\CommandAPI.Tests.csproj": {
+    "C:\\Users\\pmccu\\OneDrive\\Documents\\CommandAPi\\src\\CommandAPI\\CommandAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pmccu\\OneDrive\\Documents\\CommandAPi\\test\\CommandAPI.Tests\\CommandAPI.Tests.csproj",
-        "projectName": "CommandAPI.Tests",
-        "projectPath": "C:\\Users\\pmccu\\OneDrive\\Documents\\CommandAPi\\test\\CommandAPI.Tests\\CommandAPI.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\pmccu\\OneDrive\\Documents\\CommandAPi\\src\\CommandAPI\\CommandAPI.csproj",
+        "projectName": "CommandAPI",
+        "projectPath": "C:\\Users\\pmccu\\OneDrive\\Documents\\CommandAPi\\src\\CommandAPI\\CommandAPI.csproj",
         "packagesPath": "C:\\Users\\pmccu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pmccu\\OneDrive\\Documents\\CommandAPi\\test\\CommandAPI.Tests\\obj\\",
+        "outputPath": "C:\\Users\\pmccu\\OneDrive\\Documents\\CommandAPi\\src\\CommandAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pmccu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,9 +40,94 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\pmccu\\OneDrive\\Documents\\CommandAPi\\test\\CommandAPI.Tests\\CommandAPI.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\pmccu\\OneDrive\\Documents\\CommandAPi\\test\\CommandAPI.Tests\\CommandAPI.Tests.csproj",
+        "projectName": "CommandAPI.Tests",
+        "projectPath": "C:\\Users\\pmccu\\OneDrive\\Documents\\CommandAPi\\test\\CommandAPI.Tests\\CommandAPI.Tests.csproj",
+        "packagesPath": "C:\\Users\\pmccu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pmccu\\OneDrive\\Documents\\CommandAPi\\test\\CommandAPI.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\pmccu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\pmccu\\OneDrive\\Documents\\CommandAPi\\src\\CommandAPI\\CommandAPI.csproj": {
+                "projectPath": "C:\\Users\\pmccu\\OneDrive\\Documents\\CommandAPi\\src\\CommandAPI\\CommandAPI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[16.7.1, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             },
             "coverlet.collector": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
