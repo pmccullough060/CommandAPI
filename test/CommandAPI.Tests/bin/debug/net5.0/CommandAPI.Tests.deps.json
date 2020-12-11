@@ -9,6 +9,7 @@
       "CommandAPI.Tests/1.0.0": {
         "dependencies": {
           "CommandAPI": "1.0.0",
+          "Microsoft.EntityFrameworkCore.InMemory": "5.0.1",
           "Microsoft.EntityFrameworkCore.Relational": "5.0.1",
           "Microsoft.NET.Test.Sdk": "16.7.1",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "5.0.0",
@@ -76,6 +77,17 @@
         }
       },
       "Microsoft.EntityFrameworkCore.Analyzers/5.0.1": {},
+      "Microsoft.EntityFrameworkCore.InMemory/5.0.1": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.EntityFrameworkCore.InMemory.dll": {
+            "assemblyVersion": "5.0.1.0",
+            "fileVersion": "5.0.120.57509"
+          }
+        }
+      },
       "Microsoft.EntityFrameworkCore.Relational/5.0.1": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "5.0.1",
@@ -1254,6 +1266,13 @@
       "sha512": "sha512-3WjoY8JlB7m/VApD5A4JlntFLGV2C1qOV9fiPZQNBwlNnNAVZemDVZAksN1yBVMoPqw87VaogbP5sxgptCwTFA==",
       "path": "microsoft.entityframeworkcore.analyzers/5.0.1",
       "hashPath": "microsoft.entityframeworkcore.analyzers.5.0.1.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.InMemory/5.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-k04XjVxDLO0aeXbnjvUaSZssVyBYWnjvhU4zhnvCDMF+pXkTsa/PRgeOMsS6I8lyT6DQtH0WYqPFtCLh2E8gFQ==",
+      "path": "microsoft.entityframeworkcore.inmemory/5.0.1",
+      "hashPath": "microsoft.entityframeworkcore.inmemory.5.0.1.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Relational/5.0.1": {
       "type": "package",

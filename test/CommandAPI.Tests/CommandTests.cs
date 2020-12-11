@@ -1,20 +1,32 @@
+using System;
 using Xunit;
 using CommandAPI.Models;
 
 namespace CommandAPI.Tests
 {
-    public class CommandTests
+    public class CommandTests : IDisposable
     {
-        [Fact]
-        public void TestName()
+        Command testCommand;
+
+        public CommandTests()
         {
-        //Arrange
-            var testCommand = new Command
+            testCommand = new Command()
             {
-                HowTo = "Do something awesome",
-                Platform = "xUnit",
-                CommandLine = "dotnet test"
+                HowTo = "Do something",
+                Platform = "Some platform",
+                CommandLine = "Some commandline"
             };
+        }
+
+        public void Dispose()
+        {
+            testCommand = null;
+        }
+
+        [Fact]
+        public void CanChangeHowTo()
+        {
+            //Arrange
 
             //Act
             testCommand.HowTo = "Execute Unit Tests";
@@ -22,5 +34,31 @@ namespace CommandAPI.Tests
             //Assert
             Assert.Equal("Execute Unit Tests", testCommand.HowTo);
         }
+
+        [Fact]
+        public void CanChangePlatform()
+        {
+            //Arrange
+
+            //Act
+            testCommand.Platform = "xUnit";
+
+            //Asset
+            Assert.Equal("xUnit", testCommand.Platform);
+        }
+
+        [Fact]
+        public void CanChangeCommandLine()
+        {
+            //Arrange
+
+            //Act
+            testCommand.CommandLine ="dotnet test";
+
+            //Assert
+            Assert.Equal("dotnet test", testCommand.CommandLine);
+        }
     }
 }
+
+//here we have implemented an IDisposablw interface for code cleanup
