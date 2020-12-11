@@ -1,5 +1,5 @@
 v16/
 src/CommandAPI/obj
 test/CommandAPI.Tests/obj
-src/CommandAPI/obj/bin
-test/CommandAPI.Tests/obj/bin
+src/CommandAPI/bin
+test/CommandAPI.Tests/bin
