@@ -16,10 +16,38 @@ namespace CommandAPI.Controllers
         } 
 
         [HttpGet]
-        public ActionResult<IEnumerable<Command>> Get()
+        public ActionResult<IEnumerable<Command>> GetCommandsItems()
         {
             return _context.CommandItems;
         }
+
+        [HttpGet("{id}")]
+        public ActionResult<Command> GetCommandsItem(int id)
+        {
+            var commandItem = _context.CommandItems.Find(id);
+
+            if(commandItem == null)
+                return NotFound();
+
+            return commandItem;
+        }
+
+        [HttpPost]
+        public ActionResult<Command> PostCommandItem(Command command)
+        {
+            _context.CommandItems.Add(command);
+
+            try
+            {
+                _context.SaveChanges(); //if it can't save something we wrong...
+            }
+            catch
+            {
+                return BadRequest();
+            }
+            return CreatedAtAction("GetCommandItem", new Command{Id = command.Id}, command);
+        }
+
     }
 }
 
