@@ -195,7 +195,7 @@ namespace CommandAPI.Tests
             var result = controller.PostCommandItem(command);
 
             //Assert
-            Assert.Equal(oldCount + 1, dbContext.CommandItems.Count());
+            Assert.Equal(oldCount + 1, dbContext.CommandItems.Count()); //checking that a new item has been added to the database/dbContext
         }
 
         [Fact]
@@ -213,9 +213,112 @@ namespace CommandAPI.Tests
             var result = controller.PostCommandItem(command);
 
             //Assert
-            Assert.IsType<CreatedAtActionResult>(result.Result);
+            Assert.IsType<CreatedAtActionResult>(result.Result); //checks that a 201 is returned once new object is posted to database
         }
 
-        ///pg146
+        [Fact]
+        public void PutCommandItem_AttributeUpdated_WhenValidObject() //updating an existing item
+        {
+            //Arrange
+            var command = new Command()
+            {
+                HowTo = "DoSomething",
+                Platform = "Some Platform",
+                CommandLine = "Some Command"
+            };
+
+            dbContext.CommandItems.Add(command);
+            dbContext.SaveChanges();
+
+            var cmdId = command.Id;
+
+            command.HowTo = "UPDATED";
+
+            //Act
+            controller.PutCommandItem(cmdId, command);
+            var result = dbContext.CommandItems.Find(cmdId);
+
+            //Assert
+            Assert.Equal(command.HowTo, result.HowTo);
+        }
+
+        [Fact]
+        public void PutCommandItem_Returns204_WhenValidObject() //204 - indicates that the server has successfully fulfilled the request and no content response.
+        {
+            //Arrange
+            var command = new Command()
+            {
+                HowTo = "Do Something",
+                Platform = "Some Platform",
+                CommandLine = "Some Command"
+            };
+            dbContext.CommandItems.Add(command);
+            dbContext.SaveChanges();
+
+            var cmdId = command.Id;
+
+            command.HowTo = "UPDATED";
+
+            //Act
+            var result = controller.PutCommandItem(cmdId, command);
+
+            //Assert
+            Assert.IsType<NoContentResult>(result);
+        }
+
+        [Fact]
+        public void PutCommandItem_Returns400_WhenInvalidObject()
+        {
+            //Arrange
+            var command = new Command()
+            {
+                HowTo = "Do Something",
+                Platform = "Some Platform",
+                CommandLine = "Some Command"
+            };
+            dbContext.CommandItems.Add(command);
+            dbContext.SaveChanges();
+
+            var cmdId = command.Id + 1;
+
+            command.HowTo = "UPDATED";
+
+            //Act
+            var result = controller.PutCommandItem(cmdId, command);
+
+            //Assert
+            Assert.IsType<BadRequestResult>(result);
+        }
+
+        [Fact]
+        public void PutCommandItem_AttributeUnchanged_WhenInvalidObject()
+        {
+            //Arrange
+            var command = new Command()
+            {
+                HowTo = "Do Something",
+                Platform = "Some Platform",
+                CommandLine = "Some Command"
+            };
+            dbContext.CommandItems.Add(command);
+            dbContext.SaveChanges();
+
+            var command2 = new Command()
+            {
+                Id = command.Id,
+                HowTo = "UPDATED",
+                Platform = "UPDATED",
+                CommandLine = "UPDATED"
+            };
+
+            //Act
+            controller.PutCommandItem(command.Id + 1, command2);
+            var result = dbContext.CommandItems.Find(command.Id);
+
+            //Assert
+            Assert.Equal(command.HowTo, result.HowTo);
+        }
+
+
     }
 }
