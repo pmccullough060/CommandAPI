@@ -13,7 +13,7 @@ namespace CommandAPI.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    howTo = table.Column<string>(type: "text", nullable: true),
+                    HowTo = table.Column<string>(type: "text", nullable: true),
                     Platform = table.Column<string>(type: "text", nullable: true),
                     CommandLine = table.Column<string>(type: "text", nullable: true)
                 },
