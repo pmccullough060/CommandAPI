@@ -13,14 +13,14 @@ namespace CommandAPI.Controllers
         
         public CommandsController(CommandContext context) 
         {
-            //random comment hereffff
             _context = context;
         } 
 
         [HttpGet]
         public ActionResult<IEnumerable<Command>> GetCommandsItems()
         {
-            return _context.CommandItems;
+            //return _context.CommandItems;
+            return new OkObjectResult("hey");
         }
 
         [HttpGet("{id}")]
