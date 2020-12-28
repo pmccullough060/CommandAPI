@@ -19,8 +19,7 @@ namespace CommandAPI.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Command>> GetCommandsItems()
         {
-            //return _context.CommandItems;
-            return new OkObjectResult("hey");
+            return _context.CommandItems;
         }
 
         [HttpGet("{id}")]
