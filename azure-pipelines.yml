@@ -34,11 +34,6 @@ steps:
     projects: '**/*Tests/*.csproj'
     testRunTitle: 'xUnit Test Run'
 
-- task: VSTest@2
-  inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-
 - task: DotNetCoreCLI@2
   displayName: 'dotnet publish'
   inputs:
